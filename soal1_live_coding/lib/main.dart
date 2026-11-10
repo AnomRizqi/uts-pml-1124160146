@@ -33,7 +33,7 @@
                 appBar: AppBar(
                     backgroundColor: Colors.brown,
                     title: const Text('Profil mahasiswa'),
-                    centerTitle: false,
+                    centerTitle: true,
                     actions: [
                         IconButton(onPressed:(){
                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('cari')),);
@@ -44,8 +44,38 @@
                     ],
                 ),
                 body: SingleChildScrollView(
-                    child: Padding(padding: ),
-                )
+                    child: Padding(padding: EdgeInsetsGeometry.all(25),
+                    child: Center(
+                        child: Column(
+                            children: [
+                                CircleAvatar(
+                                    radius: 50,
+                                    child: Icon(Icons.person,size: 25,),
+
+                                ),
+                                SizedBox(height: 25,),
+                                Text('Anom Rizqi', 
+                                style: Theme.of(context).textTheme.headlineSmall,
+                                ),
+                                Text('1124160146',style: Theme.of(context).textTheme.bodyMedium,
+                                ),
+                                Text('Teknik informatika',style: Theme.of(context).textTheme.bodyMedium,
+                                ),
+
+                            ],
+                        ),
+                    ),
+                    ),
+                ),
+                floatingActionButton: FloatingActionButton(onPressed: (){
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('tambah'))
+                    );
+                    
+                },
+                child: Icon(Icons.add),
+                tooltip: 'add',
+                
+                ),
                 );
             }
             }
