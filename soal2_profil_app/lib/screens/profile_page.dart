@@ -66,7 +66,21 @@ class ProfilePage extends StatelessWidget {
                                   ),
                                   child: Column(
                                     children: [
-                                      
+                                      const InfoTile(
+                                        icon: Icons.sports_esports,
+                                        label: 'Hobi',
+                                        value: 'Gaming',
+                                    ),
+                                      const InfoTile(
+                                        icon: Icons.code,
+                                        label: 'Keahlian',
+                                        value: 'Programming',
+                                        ),
+                                        const InfoTile(
+                                        icon: Icons.design_services,
+                                        label: 'Keahlian',
+                                        value: 'UI/UX Design',
+                                    ),
                                     ],
                                   ),
                                 )
@@ -78,3 +92,24 @@ class ProfilePage extends StatelessWidget {
         );
     }
 }
+    class InfoTile extends StatelessWidget {
+        const InfoTile({
+            super.key,
+            required this.icon,
+            required this.label,
+            required this.value,
+        });
+
+        final IconData icon;
+        final String label;
+        final String value;
+
+        @override
+        Widget build(BuildContext context) {
+            return ListTile(
+                leading: Icon(icon),
+                title: Text(label),
+                subtitle: Text(value),
+            );
+        }
+    }
