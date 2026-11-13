@@ -58,6 +58,18 @@ class ProfilePage extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: Theme.of(context).textTheme.bodyMedium,
                                 ),
+                                Card(
+                                  elevation: 2,
+                                  shape: RoundedSuperellipseBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      
+                                    ],
+                                  ),
+                                )
                             ],
                         ),
                     ),
