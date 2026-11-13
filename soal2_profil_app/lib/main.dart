@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'screens/profile_page.dart';
 
 void main(){
     runApp(MyApp());
@@ -31,16 +32,7 @@ class MyApp extends StatelessWidget {
             ),
 
             themeMode: ThemeMode.light,
-
-            home: Scaffold(
-                appBar: AppBar(
-                    title: const Text('Profil Mahasiswa'),
-                    centerTitle: true,
-                ),
-                body: const Center(
-                    child: Text('Profil Anom Rizqi'),
-                ),
-            ),
+            home: const ProfilePage(),
         );
     }
 }
