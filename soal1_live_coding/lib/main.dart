@@ -86,23 +86,45 @@
                                                 )
                                             ],
                                         ),
-                                    )
-                                    
+                                    ),
+                                    Card(
+                                        child: Column(
+                                            children: [
+                                            const InfoTile(
+                                                icon: Icons.sports_esports,
+                                                label: 'Hobi',
+                                                value: 'Gaming',
+                                            ),
+                                            const InfoTile(
+                                                icon: Icons.code,
+                                                label: 'Keahlian',
+                                                value: 'Programming',
+                                            ),
+                                            const InfoTile(
+                                                icon: Icons.design_services,
+                                                label: 'Keahlian',
+                                                value: 'UI/UX Design',
+                                            ),
+                                            ],
+                                        ),
+                                        ),
                                     
                                 ],
                             ),
                         ),
                         ),
                     ),
-                    floatingActionButton: FloatingActionButton(onPressed: (){
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('tambah'))
-                        );
-                        
-                    },
-                    child: Icon(Icons.add),
-                    tooltip: 'add',
-                    
-                    ),
+                                                floatingActionButton: FloatingActionButton(
+                            onPressed: () {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content: Text('Terima kasih telah melihat profil saya'),
+                                ),
+                                );
+                            },
+                            child: const Icon(Icons.add),
+                            tooltip: 'add',
+                            ),
                     );
                 }
                 }
