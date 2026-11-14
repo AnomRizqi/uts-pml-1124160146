@@ -43,10 +43,11 @@ class ProfilePage extends StatelessWidget {
                             accountName: Text(profile.nama),
                             accountEmail: Text(profile.nim),
                             currentAccountPicture: const CircleAvatar(
-                                child: Icon(Icons.person, size: 35),
+                                backgroundImage: AssetImage(
+                                    'assets/images/profile.jpg',
+                                ),
                             ),
                         ),
-
                         ListTile(
                             leading: const Icon(Icons.person),
                             title: const Text('Profil'),
@@ -113,12 +114,11 @@ class ProfilePage extends StatelessWidget {
                         const SizedBox(height: 16),
 
                         const CircleAvatar(
-                            radius: 65,
-                            child: Icon(
-                                Icons.person,
-                                size: 50,
-                            ),
-                        ),
+                          radius: 65,
+                          backgroundImage: AssetImage(
+                              'assets/images/profile.jpg',
+                          ),
+                      ),
 
                         const SizedBox(height: 20),
 
