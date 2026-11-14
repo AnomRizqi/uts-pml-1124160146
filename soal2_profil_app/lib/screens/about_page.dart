@@ -22,26 +22,36 @@ class AboutPage extends StatelessWidget {
                         ),
                     ),
 
-                    const ListTile(
-                        leading: Icon(Icons.sports_esports),
-                        title: Text('Gaming'),
-                        subtitle: Text('Bermain game di waktu luang'),
+                    const SizedBox(height: 10),
+
+                    Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: const Column(
+                            children: [
+                                ListTile(
+                                    leading: Icon(Icons.sports_esports),
+                                    title: Text('Gaming'),
+                                    subtitle: Text('Bermain game di waktu luang'),
+                                ),
+
+                                ListTile(
+                                    leading: Icon(Icons.code),
+                                    title: Text('Programming'),
+                                    subtitle: Text('Membuat aplikasi dan website'),
+                                ),
+
+                                ListTile(
+                                    leading: Icon(Icons.design_services),
+                                    title: Text('UI/UX Design'),
+                                    subtitle: Text('Mendesain tampilan aplikasi'),
+                                ),
+                            ],
+                        ),
                     ),
 
-                    const ListTile(
-                        leading: Icon(Icons.code),
-                        title: Text('Programming'),
-                        subtitle: Text('Membuat aplikasi dan website'),
-                    ),
-
-                    const ListTile(
-                        leading: Icon(Icons.design_services),
-                        title: Text('UI/UX Design'),
-                        subtitle: Text('Mendesain tampilan aplikasi'),
-
-                    ),
-
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 25),
 
                     const Text(
                         'Riwayat Pendidikan',
@@ -51,10 +61,17 @@ class AboutPage extends StatelessWidget {
                         ),
                     ),
 
-                    const ListTile(
-                        leading: Icon(Icons.school),
-                        title: Text('Global Institute'),
-                        subtitle: Text('Teknik Informatika'),
+                    const SizedBox(height: 10),
+
+                    Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: const ListTile(
+                            leading: Icon(Icons.school),
+                            title: Text('Global Institute'),
+                            subtitle: Text('Teknik Informatika'),
+                        ),
                     ),
                 ],
             ),
