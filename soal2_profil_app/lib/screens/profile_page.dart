@@ -1,43 +1,28 @@
 import 'package:flutter/material.dart';
 import '../models/profile.dart';
+import 'about_page.dart';
 import 'edit_profile_page.dart';
 
-class ProfilePage extends StatefulWidget {
-    const ProfilePage({super.key});
+class ProfilePage extends StatelessWidget {
+    final Function(bool) ubahTema;
+    final bool isDarkMode;
 
-    @override
-    State<ProfilePage> createState() => _ProfilePageState();
-}
+    const ProfilePage({
+        super.key,
+        required this.ubahTema,
+        required this.isDarkMode,
+    });
 
-class _ProfilePageState extends State<ProfilePage> {
-
-    Profile profile = Profile(
+    final Profile profile = const Profile(
         nama: 'Anom Rizqi',
         nim: '1124160146',
         prodi: 'Teknik Informatika',
         kelas: 'TI SE1',
         bio: 'Mahasiswa Teknik Informatika yang tertarik dengan pengembangan aplikasi dan teknologi.',
-        email: 'anomriz@gmail.com',
+        email: '1124160146@global.ac.id',
         hp: '081234567890',
         github: 'github.com/AnomRizqi',
     );
-
-    void editProfil() async {
-        final hasil = await Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) {
-                    return EditProfilePage(profile: profile);
-                },
-            ),
-        );
-
-        if (hasil != null) {
-            setState(() {
-                profile = hasil;
-            });
-        }
-    }
 
     @override
     Widget build(BuildContext context) {
@@ -45,156 +30,211 @@ class _ProfilePageState extends State<ProfilePage> {
             appBar: AppBar(
                 title: const Text('Profil Mahasiswa'),
                 centerTitle: true,
-                actions: [
-                    IconButton(
-                        onPressed: editProfil,
-                        icon: const Icon(Icons.edit),
-                        tooltip: 'Edit Profil',
-                    ),
-                ],
             ),
 
-            body: SafeArea(
-                child: SingleChildScrollView(
-                    child: Padding(
-                        padding: const EdgeInsets.all(25),
-                        child: Column(
-                            children: [
-                                const CircleAvatar(
-                                    radius: 55,
-                                    child: Icon(
-                                        Icons.person,
-                                        size: 40,
+            drawer: Drawer(
+                child: ListView(
+                    padding: EdgeInsets.zero,
+                    children: [
+                        UserAccountsDrawerHeader(
+                            decoration: const BoxDecoration(
+                                color: Colors.indigo,
+                            ),
+                            accountName: Text(profile.nama),
+                            accountEmail: Text(profile.nim),
+                            currentAccountPicture: const CircleAvatar(
+                                child: Icon(Icons.person, size: 35),
+                            ),
+                        ),
+
+                        ListTile(
+                            leading: const Icon(Icons.person),
+                            title: const Text('Profil'),
+                            onTap: () {
+                                Navigator.pop(context);
+                            },
+                        ),
+
+                        ListTile(
+                            leading: const Icon(Icons.edit),
+                            title: const Text('Edit Profil'),
+                            onTap: () {
+                                Navigator.pop(context);
+
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) {
+                                            return EditProfilePage(
+                                                profile: profile,
+                                            );
+                                        },
                                     ),
-                                ),
+                                );
+                            },
+                        ),
 
-                                const SizedBox(height: 20),
+                        ListTile(
+                            leading: const Icon(Icons.info_outline),
+                            title: const Text('Tentang Saya'),
+                            onTap: () {
+                                Navigator.pop(context);
 
-                                Text(
-                                    profile.nama,
-                                    style: Theme.of(context).textTheme.headlineSmall,
-                                ),
-
-                                const SizedBox(height: 5),
-
-                                Text(
-                                    profile.nim,
-                                    style: Theme.of(context).textTheme.bodyMedium,
-                                ),
-
-                                Text(
-                                    profile.prodi,
-                                    style: Theme.of(context).textTheme.bodyMedium,
-                                ),
-
-                                Text(
-                                    profile.kelas,
-                                    style: Theme.of(context).textTheme.bodyMedium,
-                                ),
-
-                                const SizedBox(height: 10),
-
-                                Text(
-                                    profile.bio,
-                                    textAlign: TextAlign.center,
-                                    style: Theme.of(context).textTheme.bodyMedium,
-                                ),
-
-                                const SizedBox(height: 15),
-
-                                Card(
-                                    elevation: 2,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(20),
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) {
+                                            return const AboutPage();
+                                        },
                                     ),
-                                    child: Column(
-                                        children: [
-                                            const InfoTile(
-                                                icon: Icons.sports_esports,
-                                                label: 'Hobi',
-                                                value: 'Gaming',
-                                            ),
+                                );
+                            },
+                        ),
 
-                                            const InfoTile(
-                                                icon: Icons.code,
-                                                label: 'Keahlian',
-                                                value: 'Programming',
-                                            ),
+                        const Divider(),
 
-                                            const InfoTile(
-                                                icon: Icons.design_services,
-                                                label: 'Keahlian',
-                                                value: 'UI/UX Design',
-                                            ),
-                                        ],
-                                    ),
-                                ),
+                        SwitchListTile(
+                            secondary: const Icon(Icons.dark_mode),
+                            title: const Text('Mode Gelap'),
+                            value: isDarkMode,
+                            onChanged: (value) {
+                                ubahTema(value);
+                            },
+                        ),
+                    ],
+                ),
+            ),
 
-                                const SizedBox(height: 15),
+            body: SingleChildScrollView(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                        const SizedBox(height: 16),
 
-                                Card(
-                                    elevation: 2,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    child: Column(
-                                        children: [
-                                            const ListTile(
-                                                title: Text(
-                                                    'Informasi Kontak',
+                        const CircleAvatar(
+                            radius: 65,
+                            child: Icon(
+                                Icons.person,
+                                size: 50,
+                            ),
+                        ),
+
+                        const SizedBox(height: 20),
+
+                        Text(
+                            profile.nama,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                            ),
+                        ),
+
+                        const SizedBox(height: 8),
+
+                        Text(profile.nim),
+
+                        const SizedBox(height: 8),
+
+                        Text(profile.prodi),
+                        Text('Kelas ${profile.kelas}'),
+
+                        const SizedBox(height: 24),
+
+                        Card(
+                            child: Padding(
+                                padding: const EdgeInsets.all(16),
+                                child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                        const Row(
+                                            children: [
+                                                Icon(Icons.person_outline),
+                                                SizedBox(width: 8),
+                                                Text(
+                                                    'Tentang Saya',
                                                     style: TextStyle(
+                                                        fontSize: 18,
                                                         fontWeight: FontWeight.bold,
                                                     ),
                                                 ),
-                                            ),
+                                            ],
+                                        ),
 
-                                            InfoTile(
-                                                icon: Icons.email,
-                                                label: 'Email',
-                                                value: profile.email,
-                                            ),
+                                        const SizedBox(height: 12),
 
-                                            InfoTile(
-                                                icon: Icons.phone,
-                                                label: 'Nomor HP',
-                                                value: profile.hp,
-                                            ),
-
-                                            InfoTile(
-                                                icon: Icons.code,
-                                                label: 'GitHub',
-                                                value: profile.github,
-                                            ),
-                                        ],
-                                    ),
+                                        Text(
+                                            profile.bio,
+                                            textAlign: TextAlign.justify,
+                                        ),
+                                    ],
                                 ),
-                            ],
+                            ),
                         ),
-                    ),
+
+                        const SizedBox(height: 16),
+
+                        const Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                                'Informasi Kontak',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                ),
+                            ),
+                        ),
+
+                        const SizedBox(height: 8),
+
+                        Card(
+                            child: Column(
+                                children: [
+                                    ListTile(
+                                        leading: const Icon(Icons.email),
+                                        title: const Text('Email'),
+                                        subtitle: Text(profile.email),
+                                    ),
+
+                                    const Divider(height: 1),
+
+                                    ListTile(
+                                        leading: const Icon(Icons.phone),
+                                        title: const Text('Nomor HP'),
+                                        subtitle: Text(profile.hp),
+                                    ),
+
+                                    const Divider(height: 1),
+
+                                    ListTile(
+                                        leading: const Icon(Icons.code),
+                                        title: const Text('GitHub'),
+                                        subtitle: Text(profile.github),
+                                    ),
+                                ],
+                            ),
+                        ),
+                    ],
                 ),
             ),
-        );
-    }
-}
 
-class InfoTile extends StatelessWidget {
-    const InfoTile({
-        super.key,
-        required this.icon,
-        required this.label,
-        required this.value,
-    });
-
-    final IconData icon;
-    final String label;
-    final String value;
-
-    @override
-    Widget build(BuildContext context) {
-        return ListTile(
-            leading: Icon(icon),
-            title: Text(label),
-            subtitle: Text(value),
+            floatingActionButton: FloatingActionButton(
+                onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) {
+                                return EditProfilePage(
+                                    profile: profile,
+                                );
+                            },
+                        ),
+                    );
+                },
+                tooltip: 'Edit Profil',
+                child: const Icon(Icons.edit),
+            ),
         );
     }
 }
