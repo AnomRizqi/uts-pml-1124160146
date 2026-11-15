@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class AboutPage extends StatelessWidget {
@@ -67,10 +68,22 @@ class AboutPage extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                         ),
-                        child: const ListTile(
-                            leading: Icon(Icons.school),
-                            title: Text('Global Institute'),
-                            subtitle: Text('Teknik Informatika'),
+                        child: const Column(
+                            children: [
+                                ListTile(
+                                    leading: Icon(Icons.school),
+                                    title: Text('Global Institute'),
+                                    subtitle: Text('Teknik Informatika'),
+                                ),
+
+                                Divider(height: 1),
+
+                                ListTile(
+                                    leading: Icon(Icons.school),
+                                    title: Text('SMKS Binong Permai'),
+                                    subtitle: Text('Sekolah Menengah Kejuruan'),
+                                ),
+                            ],
                         ),
                     ),
                 ],
