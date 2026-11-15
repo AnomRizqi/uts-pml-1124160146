@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import '../models/profile.dart';
 
@@ -20,6 +21,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
     late TextEditingController namaController;
     late TextEditingController emailController;
     late TextEditingController hpController;
+    late TextEditingController githubController;
     late TextEditingController bioController;
 
     @override
@@ -29,6 +31,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
         namaController = TextEditingController(text: widget.profile.nama);
         emailController = TextEditingController(text: widget.profile.email);
         hpController = TextEditingController(text: widget.profile.hp);
+        githubController = TextEditingController(text: widget.profile.github);
         bioController = TextEditingController(text: widget.profile.bio);
     }
 
@@ -37,6 +40,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
         namaController.dispose();
         emailController.dispose();
         hpController.dispose();
+        githubController.dispose();
         bioController.dispose();
 
         super.dispose();
@@ -53,7 +57,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 bio: bioController.text,
                 email: emailController.text,
                 hp: hpController.text,
-                github: widget.profile.github,
+                github: githubController.text,
             );
 
             Navigator.pop(context, dataBaru);
@@ -123,6 +127,16 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                     }
                                     return null;
                                 },
+                            ),
+
+                            const SizedBox(height: 15),
+
+                            TextFormField(
+                                controller: githubController,
+                                decoration: const InputDecoration(
+                                    labelText: 'GitHub',
+                                    border: OutlineInputBorder(),
+                                ),
                             ),
 
                             const SizedBox(height: 15),
