@@ -1,33 +1,29 @@
-# UTS Pemrograman Mobile – Aplikasi Profil Mahasiswa
+# Profil Anom v1.0.1
 
-Aplikasi Profil Mahasiswa merupakan aplikasi Android yang dibuat menggunakan Flutter dan Dart sebagai bagian dari Ujian Tengah Semester (UTS) mata kuliah Pemrograman Mobile.
+Aplikasi Profil Mahasiswa berbasis Android yang dibuat menggunakan Flutter dan Dart untuk memenuhi tugas UTS mata kuliah Pemrograman Mobile.
 
-Aplikasi ini dibuat untuk menampilkan informasi pribadi mahasiswa serta menyediakan beberapa fitur seperti login, edit profil, halaman About, dan pengaturan tema gelap.
+Aplikasi ini digunakan untuk menampilkan informasi pribadi mahasiswa dan menyediakan beberapa fitur tambahan seperti login, edit profil, halaman About, serta pengaturan tema aplikasi.
 
 ## Identitas Mahasiswa
 
-| Keterangan | Data |
+| Keterangan | Informasi |
 |---|---|
 | Nama | Anom Rizqi |
 | NIM | 1124160146 |
 | Program Studi | Teknik Informatika |
 | Kelas | TI SE1 |
 | Mata Kuliah | Pemrograman Mobile |
-| Framework | Flutter |
-| Bahasa Pemrograman | Dart |
 
 ## Fitur Aplikasi
 
-Berikut beberapa fitur yang tersedia di dalam aplikasi:
-
-1. **Login** – Halaman untuk masuk ke aplikasi menggunakan username dan password.
-2. **Profil Mahasiswa** – Menampilkan foto, nama, NIM, program studi, kelas, dan informasi kontak.
-3. **Edit Profil** – Mengubah informasi seperti nama, email, nomor HP, GitHub, dan bio.
-4. **About** – Menampilkan informasi hobi, keahlian, dan riwayat pendidikan.
-5. **Dark Mode** – Mengubah tampilan aplikasi dari tema terang ke tema gelap.
-6. **Bottom Navigation** – Memudahkan pengguna berpindah antara halaman Profil dan About.
-7. **Drawer Menu** – Menyediakan navigasi tambahan dan pengaturan aplikasi.
-8. **Logout** – Keluar dari halaman utama dan kembali ke halaman login.
+- **Login** – Masuk ke aplikasi menggunakan username dan password.
+- **Halaman Profil** – Menampilkan foto dan informasi diri mahasiswa.
+- **Edit Profil** – Mengubah nama, email, nomor HP, GitHub, dan bio.
+- **Drawer** – Menyediakan menu navigasi dan pengaturan aplikasi.
+- **About Me** – Menampilkan hobi, keahlian, dan riwayat pendidikan.
+- **Dark Mode & Light Mode** – Mengganti tampilan aplikasi menjadi gelap atau terang.
+- **Foto Profil** – Menggunakan gambar yang diambil dari folder assets.
+- **Logout** – Keluar dari aplikasi dan kembali ke halaman login.
 
 ## Teknologi yang Digunakan
 
@@ -35,78 +31,60 @@ Berikut beberapa fitur yang tersedia di dalam aplikasi:
 - Dart
 - Material Design 3
 - Visual Studio Code
-- Android SDK
 
 ## Struktur Folder
 
 ```text
 soal2_profil_app/
-│
 ├── assets/
 │   └── images/
-│       └── foto_profil
-│
 ├── lib/
 │   ├── main.dart
-│   │
 │   ├── models/
 │   │   └── profile.dart
-│   │
-│   ├── screens/
-│   │   ├── login_page.dart
-│   │   ├── profile_page.dart
-│   │   ├── edit_profile_page.dart
-│   │   └── about_page.dart
-│   │
-│   └── widgets/
-│
+│   └── screens/
+│       ├── login_page.dart
+│       ├── profile_page.dart
+│       ├── edit_profile_page.dart
+│       └── about_page.dart
 ├── android/
 ├── test/
 ├── pubspec.yaml
 └── README.md
 ```
 
-## Tampilan Aplikasi
+## Screenshot Aplikasi
 
-### 1. Halaman Login
-Menampilkan form login untuk masuk ke aplikasi.
+### Halaman Login
+![Login](<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/6c59dc09-bd62-43a6-a66f-15298541ca05" />
 
-![Login Page](screenshots/login.png)
 
-### 2. Halaman Profil
-Menampilkan informasi pribadi dan kontak mahasiswa.
+### Halaman Profil
+![Profil](<img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/80122760-c32d-4ada-b360-f02d1b0fa149" />
+)
 
-![Profile Page](screenshots/profile.png)
+### Halaman Edit Profil
+![Edit Profil](<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/0253fda4-e9bb-4bed-b7a8-b56549fa0b99" />
+)
 
-### 3. Halaman Edit Profil
-Digunakan untuk mengubah informasi profil mahasiswa.
+### Halaman About
+![About](<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/0c7877e3-67d1-43a7-afc8-45b89707bbdc" />
+)
 
-![Edit Profile](screenshots/edit-profile.png)
-
-### 4. Halaman About
-Menampilkan hobi, keahlian, dan riwayat pendidikan.
-
-![About Page](screenshots/about.png)
-
-### 5. Dark Mode
-Menampilkan aplikasi dengan tema gelap.
-
-![Dark Mode](screenshots/dark-mode.png)
+### Dark Mode
+![Dark Mode](<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/8d309aab-8b15-4b97-9024-de4567a48c8b" />
+)
 
 ## Informasi Login
 
-Gunakan akun berikut untuk masuk ke aplikasi:
-
-| Keterangan | Akun |
+| Keterangan | Data |
 |---|---|
 | Username | anom |
 | Password | 123456 |
 
-**Catatan:** Login masih menggunakan data yang ditentukan langsung di dalam kode program dan belum terhubung dengan database.
+Login masih menggunakan data yang ditentukan langsung di dalam kode program dan belum menggunakan database.
 
 ## Cara Menjalankan Aplikasi
-
-Pastikan Flutter dan Android SDK sudah terpasang di komputer.
 
 1. Clone repository:
 
@@ -134,21 +112,25 @@ flutter run
 
 ## Download APK
 
-Aplikasi juga tersedia dalam bentuk APK yang bisa diunduh melalui GitHub Releases.
+APK versi terbaru dapat diunduh melalui GitHub Releases.
 
-**Download APK:** [Klik di sini](LINK_GITHUB_RELEASES)
+**Versi:** v1.0.1
+
+**Download:** [Download Profil Anom v1.0.1](https://github.com/AnomRizqi/uts-pml-1124160146/releases/tag/v1.0.1)
 
 ## Video Presentasi
 
-Video presentasi UTS Pemrograman Mobile dapat dilihat melalui link berikut:
+Video demonstrasi dan penjelasan aplikasi dapat dilihat melalui YouTube berikut:
 
-**YouTube:** [Klik di sini](LINK_VIDEO_YOUTUBE)
+[![Video Presentasi Profil Anom](https://img.youtube.com/vi/KJhwlg6IdIg/0.jpg)](https://youtu.be/KJhwlg6IdIg)
 
-## Repository
+**Link YouTube:** https://youtu.be/KJhwlg6IdIg
 
-Source code aplikasi dapat dilihat melalui repository GitHub berikut:
+## Repository GitHub
 
-**GitHub:** [uts-pml-1124160146](LINK_REPOSITORY_GITHUB)
+Source code aplikasi dapat dilihat melalui repository GitHub:
+
+[LINK_REPOSITORY_GITHUB]
 
 ---
 
