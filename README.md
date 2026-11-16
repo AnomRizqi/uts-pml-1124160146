@@ -2,7 +2,7 @@
 
 Aplikasi Profil Mahasiswa berbasis Android yang dibuat menggunakan Flutter dan Dart untuk memenuhi tugas UTS mata kuliah Pemrograman Mobile.
 
-Aplikasi ini digunakan untuk menampilkan informasi pribadi mahasiswa dan menyediakan beberapa fitur seperti login, edit profil, halaman About, serta pengaturan tema aplikasi.
+Aplikasi ini dibuat untuk menampilkan informasi pribadi mahasiswa serta menyediakan beberapa fitur tambahan seperti login, edit profil, halaman About, dan pengaturan tema.
 
 ## Identitas Mahasiswa
 
@@ -16,14 +16,14 @@ Aplikasi ini digunakan untuk menampilkan informasi pribadi mahasiswa dan menyedi
 
 ## Fitur Aplikasi
 
-- **Login** – Masuk ke aplikasi menggunakan username dan password.
-- **Halaman Profil** – Menampilkan foto dan informasi diri mahasiswa.
-- **Edit Profil** – Mengubah nama, email, nomor HP, GitHub, dan bio.
-- **Drawer** – Menyediakan menu navigasi aplikasi.
-- **About Me** – Menampilkan hobi, keahlian, dan riwayat pendidikan.
-- **Dark Mode & Light Mode** – Mengganti tampilan aplikasi menjadi gelap atau terang.
-- **Foto Profil** – Menggunakan gambar dari folder assets.
-- **Logout** – Keluar dari aplikasi dan kembali ke halaman login.
+- Login menggunakan username dan password.
+- Halaman Profil untuk menampilkan data diri mahasiswa.
+- Edit Profil untuk mengubah nama, email, nomor HP, GitHub, dan bio.
+- Drawer untuk mengakses menu aplikasi.
+- About Me untuk menampilkan hobi, keahlian, dan riwayat pendidikan.
+- Dark Mode dan Light Mode untuk mengganti tampilan aplikasi.
+- Foto profil yang diambil dari folder assets.
+- Logout untuk keluar dan kembali ke halaman login.
 
 ## Teknologi yang Digunakan
 
@@ -32,53 +32,37 @@ Aplikasi ini digunakan untuk menampilkan informasi pribadi mahasiswa dan menyedi
 - Material Design 3
 - Visual Studio Code
 
-## Struktur Folder
-
-```text
-soal2_profil_app/
-├── assets/
-│   └── images/
-├── lib/
-│   ├── main.dart
-│   ├── models/
-│   │   └── profile.dart
-│   └── screens/
-│       ├── login_page.dart
-│       ├── profile_page.dart
-│       ├── edit_profile_page.dart
-│       └── about_page.dart
-├── android/
-├── test/
-├── pubspec.yaml
-└── README.md
-```
-
 ## Screenshot Aplikasi
 
 ### 1. Halaman Login
 
-<img src="<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/5f5e38e6-a99a-4a5c-9aae-eeb3e6b5a7b8" />
-" width="250">
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/30e91a0e-900a-45fd-97bc-8a6fc785b8d4" width="200">
+</p>
 
 ### 2. Halaman Profil
 
-<img src="<img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/68b97776-c1dd-4bd9-bb80-6b7b0d9727ba" />
-" width="250">
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f0cbf7e8-42b5-4c8a-9513-7129d47043f0" width="200">
+</p>
 
 ### 3. Halaman Edit Profil
 
-<img src="<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/b315d071-b62c-4346-92a4-6dfabd48644d" />
-" width="250">
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/17f4bbb2-4047-4383-b275-602a62e17ec3" width="200">
+</p>
 
 ### 4. Halaman About
 
-<img src="<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/bf06d5f4-284f-40d0-beb1-e74fed7147af" />
-" width="250">
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/852a470f-c8ea-4231-b262-52637e81b62c" width="200">
+</p>
 
 ### 5. Dark Mode
 
-<img src="<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/ff9c6476-1650-473f-910b-223264beb186" />
-" width="250">
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f27af533-8e6d-4293-8b41-329b376a2326" width="200">
+</p>
 
 ## Informasi Login
 
@@ -87,14 +71,14 @@ soal2_profil_app/
 | Username | anom |
 | Password | 123456 |
 
-Login masih menggunakan data yang ditentukan langsung di dalam kode program dan belum terhubung dengan database.
+Login masih menggunakan data yang ditentukan langsung di dalam kode program dan belum menggunakan database.
 
 ## Cara Menjalankan Aplikasi
 
 Clone repository:
 
 ```bash
-git clone LINK_REPOSITORY_GITHUB
+git clone https://github.com/AnomRizqi/uts-pml-1124160146.git
 ```
 
 Masuk ke folder project:
@@ -117,21 +101,21 @@ flutter run
 
 ## Download APK
 
-APK versi terbaru dapat diunduh melalui GitHub Releases.
-
-**Versi:** v1.0.1
-
+APK versi terbaru dapat diunduh melalui bagian Releases pada repository GitHub.
 
 ## Video Presentasi
 
-Video demonstrasi dan penjelasan aplikasi:
+Video demonstrasi dan penjelasan aplikasi dapat dilihat melalui YouTube:
 
 [![Video Presentasi Profil Anom](https://img.youtube.com/vi/KJhwlg6IdIg/0.jpg)](https://youtu.be/KJhwlg6IdIg)
 
 [Klik di sini untuk menonton video presentasi](https://youtu.be/KJhwlg6IdIg)
 
+## Repository GitHub
 
+[https://github.com/AnomRizqi/uts-pml-1124160146](https://github.com/AnomRizqi/uts-pml-1124160146)
 
+---
 
 **Dibuat oleh Anom Rizqi**  
 NIM 1124160146  
