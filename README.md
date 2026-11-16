@@ -107,9 +107,9 @@ APK versi terbaru dapat diunduh melalui bagian Releases pada repository GitHub.
 
 Video demonstrasi dan penjelasan aplikasi dapat dilihat melalui YouTube:
 
-[![Video Presentasi Profil Anom](https://img.youtube.com/vi/KJhwlg6IdIg/0.jpg)](https://youtu.be/KJhwlg6IdIg)
+[![Video Presentasi Profil Anom](https://img.youtube.com/vi/KJhwlg6IdIg/0.jpg)](https://youtu.be/AXtAo-ZRKUc)
 
-[Klik di sini untuk menonton video presentasi](https://youtu.be/KJhwlg6IdIg)
+[Klik di sini untuk menonton video presentasi](https://youtu.be/AXtAo-ZRKUc)
 
 ## Repository GitHub
 
