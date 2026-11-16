@@ -102,6 +102,17 @@ class ProfilePage extends StatelessWidget {
                                 ubahTema(value);
                             },
                         ),
+                        ListTile(
+                            leading: const Icon(Icons.logout, color: Colors.red),
+                            title: const Text('Keluar'),
+                            onTap: () {
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context,
+                                    '/',
+                                    (route) => false,
+                                );
+                            },
+                        ),
                     ],
                 ),
             ),
@@ -238,3 +249,4 @@ class ProfilePage extends StatelessWidget {
         );
     }
 }
+

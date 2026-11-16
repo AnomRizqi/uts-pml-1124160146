@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'screens/login_page.dart';
 import 'screens/profile_page.dart';
 import 'screens/about_page.dart';
 
@@ -47,10 +49,15 @@ class _MyAppState extends State<MyApp> {
 
             themeMode: _themeMode,
 
-            home: MainPage(
-                ubahTema: ubahTema,
-                isDarkMode: _themeMode == ThemeMode.dark,
-            ),
+            initialRoute: '/',
+            routes: {
+                '/': (context) => const LoginPage(),
+
+                '/home': (context) => MainPage(
+                    ubahTema: ubahTema,
+                    isDarkMode: _themeMode == ThemeMode.dark,
+                ),
+            },
         );
     }
 }
@@ -83,6 +90,7 @@ class _MainPageState extends State<MainPage> {
                         ubahTema: widget.ubahTema,
                         isDarkMode: widget.isDarkMode,
                     ),
+
                     const AboutPage(),
                 ],
             ),
